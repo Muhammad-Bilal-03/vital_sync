@@ -15,15 +15,15 @@ VitalSync is a modern, full-stack medical application built with Flutter and Fir
 
 | Login & Auth | Home Dashboard | Test Booking |
 |:---:|:---:|:---:|
-| <img src="assets/screenshots/login.png" width="200" alt="Login Screen"> | <img src="assets/screenshots/home.png" width="200" alt="Home Screen"> | <img src="assets/screenshots/booking.png" width="200" alt="Booking"> |
+| <img src="https://github.com/user-attachments/assets/d9b8c35f-6f3e-4129-8b3f-f762b1d24084" width="200" alt="Login Screen"> | <img src="https://github.com/user-attachments/assets/6d00dae8-7750-42f1-84d0-9b399890b342" width="200" alt="Home Screen"> | <img src="https://github.com/user-attachments/assets/bb9c0c4f-03ed-485c-961f-7374dc14be7c" width="200" alt="Booking"> |
 
 | Cart & Checkout | Order Tracking | Profile & Settings |
 |:---:|:---:|:---:|
-| <img src="assets/screenshots/cart.png" width="200" alt="Cart"> | <img src="assets/screenshots/tracking.png" width="200" alt="Tracking"> | <img src="assets/screenshots/profile.png" width="200" alt="Profile"> |
-
-*(Note: Replace `assets/screenshots/...` with your actual image paths)*
+| <img src="https://github.com/user-attachments/assets/8a458d71-ec5b-42e4-bc54-7731f49ec451" width="200" alt="Cart"> | <img src="https://github.com/user-attachments/assets/124e368a-da15-48c7-86d7-c2c51eab5804" width="200" alt="Tracking"> | <img src="https://github.com/user-attachments/assets/ee641d23-9f31-404d-92ec-b9efc2f3caca" width="200" alt="Profile"> |
 
 ---
+
+
 
 ## ✨ Key Features
 
@@ -137,6 +137,7 @@ Major packages used in this project:
 | `another_stepper` | Order Tracking UI |
 | `shimmer` | Loading Effects |
 
+
 ---
 
 ## 🤝 Contributing
@@ -150,6 +151,7 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 5.  Open a Pull Request
 
 ---
+
 
 ## 📄 License
 
