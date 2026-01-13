@@ -1,0 +1,52 @@
+name: vital_sync
+description: The bridge between patient vitality and medical data.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- Core Architecture & State ---
+  provider: ^6.1.1
+  # Handling Dates
+  intl: ^0.19.0
+  # Backend
+  firebase_core: ^2.27.0
+  firebase_auth: ^4.17.8
+  cloud_firestore: ^4.15.8
+
+  # --- Device Features ---
+  image_picker: ^1.0.7 # Added for Phase 4 (Profile Picture)
+
+  # --- The "Neo-Medical" UI Kit ---
+  # Typography: Inter / Outfit
+  google_fonts: ^6.1.0
+  # Iconography: Sharper, cleaner look
+  lucide_icons: ^0.257.0
+  # Animations: For micro-interactions and smooth entrances
+  flutter_animate: ^4.5.0
+  # Loading: Skeleton effects
+  shimmer: ^3.0.0
+  # Navigation: Modern floating tab bar
+  google_nav_bar: ^5.0.6
+  # Tracking: For the Order Status vertical steps
+  another_stepper: ^1.2.1
+  get_it: ^9.2.0
+  shared_preferences: ^2.5.4
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  build_runner: ^2.10.5
+  json_serializable: ^6.11.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
