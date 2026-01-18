@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:provider/provider.dart';
 
-import '../../widgets/vital_app_bar.dart';
-import '../../../core/theme.dart';
 import '../../../core/result.dart';
-import '../../widgets/glass_card.dart';
+import '../../../core/theme.dart';
 import '../../../models/test_model.dart';
 import '../../../models/user_model.dart';
-import '../../../repositories/test_repository.dart';
-import '../../../providers/user_provider.dart';
 import '../../../providers/order_provider.dart';
+import '../../../providers/user_provider.dart';
 import '../../../repositories/notification_repository.dart';
+import '../../../repositories/test_repository.dart';
+import '../../widgets/glass_card.dart';
+import '../../widgets/vital_app_bar.dart';
 import '../checkout/success_screen.dart';
 
 class LabBookingScreen extends StatefulWidget {
@@ -254,8 +254,9 @@ class _LabBookingScreenState extends State<LabBookingScreen> {
 
     // 2. Validate Time Slot
     if (_selectedTimeIndex == -1) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Please select a time slot")));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text("Please select a time slot"),
+          duration: Duration(seconds: 2)));
       return;
     }
 
@@ -290,12 +291,14 @@ class _LabBookingScreenState extends State<LabBookingScreen> {
               MaterialPageRoute(builder: (_) => const SuccessScreen()));
         } else if (result is Failure) {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text((result).message), backgroundColor: Colors.red));
+              content: Text((result).message),
+              backgroundColor: Colors.red,
+              duration: Duration(seconds: 2)));
         }
       }
     } catch (e) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text("Error: $e")));
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Error: $e"), duration: Duration(seconds: 2)));
     } finally {
       if (mounted) setState(() => _isLoading = false);
     }

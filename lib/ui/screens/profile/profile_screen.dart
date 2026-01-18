@@ -1,8 +1,9 @@
-﻿import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:lucide_icons/lucide_icons.dart';
+﻿import 'dart:io';
+
+import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'dart:io';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/theme.dart';
 import '../../../providers/user_provider.dart';
@@ -23,8 +24,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
     if (!mounted) return;
     if (image != null) {
       provider.updateProfileImage(image.path);
-      ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(content: Text("Profile image updated")));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text("Profile image updated"),
+        duration: Duration(seconds: 2),
+      ));
     }
   }
 

@@ -1,26 +1,25 @@
 ﻿// ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/theme.dart';
-import '../../../providers/user_provider.dart';
+import '../../../models/test_model.dart';
 import '../../../providers/cart_provider.dart';
 import '../../../providers/order_provider.dart';
+import '../../../providers/user_provider.dart';
 import '../../../repositories/test_repository.dart';
-import '../../../models/test_model.dart';
-
 import '../../widgets/glass_card.dart';
 import '../../widgets/speed_dial_fab.dart';
-import '../cart/cart_screen.dart';
-import '../orders/orders_screen.dart';
-import '../profile/profile_screen.dart';
-import '../notifications/notifications_screen.dart';
 import '../booking/booking_screen.dart';
 import '../booking/lab_booking_screen.dart'; // Ensure this import is here
+import '../cart/cart_screen.dart';
+import '../notifications/notifications_screen.dart';
+import '../orders/orders_screen.dart';
+import '../profile/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -105,14 +104,17 @@ class _DashboardViewState extends State<DashboardView> {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text("Promo Package added!"),
           backgroundColor: VitalColors.oceanTeal,
+          duration: Duration(seconds: 2),
         ));
         Navigator.push(
             context, MaterialPageRoute(builder: (_) => const CartScreen()));
       }
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text("Offer not available yet.")));
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text("Offer not available yet."),
+          duration: Duration(seconds: 2),
+        ));
       }
     }
   }
@@ -317,6 +319,7 @@ class _DashboardViewState extends State<DashboardView> {
                                   .showSnackBar(SnackBar(
                                       content: Text("${pack.name} added!"),
                                       backgroundColor: VitalColors.oceanTeal,
+                                      duration: const Duration(seconds: 4),
                                       action: SnackBarAction(
                                         label: "CHECKOUT",
                                         textColor: Colors.white,
@@ -656,9 +659,13 @@ class _DashboardViewState extends State<DashboardView> {
                     onTap: () {
                       Provider.of<CartProvider>(context, listen: false)
                           .addTest(test);
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
                           content: Text("Added ${test.name}"),
-                          backgroundColor: VitalColors.oceanTeal));
+                          backgroundColor: VitalColors.oceanTeal,
+                          duration: const Duration(milliseconds: 1500),
+                        ),
+                      );
                     },
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -696,6 +703,7 @@ class _DashboardViewState extends State<DashboardView> {
 
 class _SectionHeader extends StatelessWidget {
   final String title;
+
   const _SectionHeader({required this.title});
 
   @override

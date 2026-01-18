@@ -1,18 +1,18 @@
 // ignore_for_file: use_build_context_synchronously, deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:intl/intl.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/result.dart'; // Import Result type
 import '../../../core/theme.dart';
-import '../../../providers/user_provider.dart';
 import '../../../providers/cart_provider.dart';
 import '../../../providers/order_provider.dart';
+import '../../../providers/user_provider.dart';
 import '../../../repositories/notification_repository.dart';
-import '../../widgets/vital_app_bar.dart';
 import '../../widgets/glass_card.dart';
+import '../../widgets/vital_app_bar.dart';
 import 'success_screen.dart';
 
 class CheckoutScreen extends StatefulWidget {
@@ -219,9 +219,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             }
                           } else if (result is Failure) {
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                              content: Text((result).message),
-                              backgroundColor: VitalColors.error,
-                            ));
+                                content: Text((result).message),
+                                backgroundColor: VitalColors.error,
+                                duration: const Duration(seconds: 3)));
                           }
                           setState(() => _isLoading = false);
                         }
