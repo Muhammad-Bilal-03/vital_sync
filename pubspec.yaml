@@ -45,8 +45,20 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   build_runner: ^2.10.5
   json_serializable: ^6.11.4
+  # --- Icon Generator ---
+  flutter_launcher_icons: ^0.13.1
 
 flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/ # Ensure the folder containing app_icon.png is included
+
+# --- Configuration for App Icon Generator ---
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/app_icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/app_icon.png"

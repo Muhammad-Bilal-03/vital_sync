@@ -2,7 +2,7 @@
           package="com.example.fire_base_project"> <application
         android:label="VitalSync"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/launcher_icon"
         android:enableOnBackInvokedCallback="true">
 
     <meta-data
